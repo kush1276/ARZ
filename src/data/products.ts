@@ -8,7 +8,7 @@ export interface Product {
   hoverImage: string;
   images?: string[];
   category: 'knitwear' | 'linen' | 'outerwear' | 'signature';
-  color: 'beige' | 'cream' | 'white' | 'sand' | 'charcoal' | 'gold' | 'blue';
+  color: 'beige' | 'cream' | 'white' | 'sand' | 'charcoal' | 'gold' | 'blue' | 'purple';
   description: string;
   materials: string;
   care: string;
