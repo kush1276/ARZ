@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARZ Made to feel effortless | Premium Minimalist Clothing</title>
+    <meta name="description" content="Discover ARZ Made to feel effortless. Highly-crafted slow-fashion apparel in natural tones. Organic linen, cashmere knitwear, and structured outerwear designed for the modern wardrobe.">
+    
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <!-- --- HEADER --- -->
+    <header id="main-header">
+        <div class="container header-inner">
+            <button class="mobile-toggle" aria-label="Toggle mobile menu" id="mobile-toggle-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <a href="index.html" class="logo" id="header-logo">ARZ<span>Made to feel effortless</span></a>
+
+            <nav class="nav-links" id="navigation-bar">
+                <a href="shop.html" id="nav-shop">Shop</a>
+                <a href="about.html" id="nav-about">Philosophy</a>
+                <a href="about.html#atelier" id="nav-story">The Atelier</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="header-btn cart-btn" aria-label="Open bag" id="cart-drawer-toggle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- --- EDITORIAL HERO SECTION --- -->
+    <section class="hero" id="hero-banner">
+        <div class="hero-img-wrapper">
+            <img src="images/hero_bg_new.jpg" class="hero-img" alt="ARZ Made to feel effortless lookbook editorial model wearing linen apparel">
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <p>Maison ARZ | Summer Collection</p>
+                <h1>Quiet Luxury,<br>Minimalist Living</h1>
+                <p>Thoughtfully crafted silhouettes using natural fibers, warm beige tones, and absolute comfort.</p>
+                <a href="shop.html" class="btn" id="hero-shop-cta">Explore the collection</a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- --- COLLECTIONS GRID --- -->
+        <section class="section" id="collections-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-subtitle">Collections</span>
+                    <h2 class="section-title">The Seasonal Edit</h2>
+                </div>
+                <div class="collections-grid">
+                    <!-- Navy Blossom -->
+                    <div class="collection-card reveal" onclick="window.location.href='shop.html?cat=linen'" id="coll-knitwear">
+                        <img src="images/navy_blossom_3.jpg" alt="Navy Blossom Premium Suit Set">
+                        <div class="collection-info">
+                            <h3>Navy Blossom</h3>
+                            <span class="collection-link">Discover collection</span>
+                        </div>
+                    </div>
+                    <!-- Dusty Blue -->
+                    <div class="collection-card reveal" onclick="window.location.href='shop.html?cat=linen'" id="coll-linen">
+                        <img src="images/dusty_blue_1.jpg" alt="Dusty Blue A-Line Suit Set">
+                        <div class="collection-info">
+                            <h3>Dusty Blue</h3>
+                            <span class="collection-link">Discover collection</span>
+                        </div>
+                    </div>
+                    <!-- Outerwear -->
+                    <div class="collection-card reveal" onclick="window.location.href='shop.html?cat=outerwear'" id="coll-outerwear">
+                        <img src="images/outerwear_collection.png" alt="Structured trench coat hanging on oak wood hanger">
+                        <div class="collection-info">
+                            <h3>Outerwear</h3>
+                            <span class="collection-link">Discover collection</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- --- PHILOSOPHY SECTION --- -->
+        <section class="section philosophy" id="philosophy-section">
+            <div class="container philosophy-inner">
+                <div class="philosophy-image reveal">
+                    <img src="images/about_atelier.png" alt="Aesthetic clothes rack in minimal atelier studio setting">
+                </div>
+                <div class="philosophy-info reveal">
+                    <span class="section-subtitle">Philosophy</span>
+                    <h2>A Canvas of Linen,<br>Cashmere, & Light</h2>
+                    <p>At ARZ Made to feel effortless, we believe in a curated life. Every stitch is placed intentionally. Every linen yarn is spun to last. We focus on low-impact production, earthy mineral hues, and relaxed silhouettes that respect both the human form and the environment.</p>
+                    <a href="about.html" class="btn btn-outline" id="philosophy-read-cta">Read our story</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- NEWSLETTER --- -->
+        <section class="section newsletter" id="newsletter-section">
+            <div class="container newsletter-inner reveal">
+                <h2>Join the Atelier</h2>
+                <p>Subscribe to receive curated lookbooks, early access to new collections, and stories from our design atelier.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to ARZ Made to feel effortless.');" id="subscribe-form">
+                    <input type="email" placeholder="Your email address" class="newsletter-input" required aria-label="Email Address" id="newsletter-email">
+                    <button type="submit" class="newsletter-submit" id="newsletter-submit-btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- --- FOOTER --- -->
+    <footer id="main-footer">
+        <div class="container footer-inner">
+            <div class="footer-col footer-about">
+                <h4 id="footer-brand-title">ARZ Made to feel effortless</h4>
+                <p>Minimalist slow-fashion and premium curated staples designed with organic fibers in earth-inspired beige and off-white tones.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="shop.html?cat=knitwear">Knitwear</a></li>
+                    <li><a href="shop.html?cat=linen">Organic Linen</a></li>
+                    <li><a href="shop.html?cat=outerwear">Outerwear</a></li>
+                    <li><a href="shop.html">New Arrivals</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Customer Care</h4>
+                <ul>
+                    <li><a href="about.html">Our Atelier</a></li>
+                    <li><a href="shop.html">Sizing Guide</a></li>
+                    <li><a href="index.html">Shipping & Returns</a></li>
+                    <li><a href="index.html">Sustainability</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:atelier@arz.com">atelier@arz.com</a></li>
+                    <li><a href="tel:+18005550190">1.800.555.0190</a></li>
+                    <li><a href="about.html">Our Showroom</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <span class="footer-copyright">&copy; 2026 ARZ Made to feel effortless. All rights reserved.</span>
+            <div class="footer-socials">
+                <a href="#instagram">Instagram</a>
+                <a href="#pinterest">Pinterest</a>
+                <a href="#journal">Journal</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- --- SLIDE-OUT CART DRAWER --- -->
+    <div class="cart-overlay" id="cart-drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer-menu">
+        <div class="cart-header">
+            <h3>Shopping Bag</h3>
+            <button class="close-cart" aria-label="Close cart" id="cart-close-btn">&times;</button>
+        </div>
+        
+        <!-- Cart items populated by JS -->
+        <div class="cart-items" id="cart-items-list">
+            <!-- Empty state fallback handled in JS -->
+        </div>
+
+        <div class="cart-footer" id="cart-drawer-footer">
+            <div class="cart-subtotal">
+                <span>Subtotal</span>
+                 <span id="cart-subtotal-val">₹0.00</span>
+            </div>
+            <p class="cart-footer-text">Taxes and shipping calculated at checkout. Worldwide shipping available.</p>
+            <button class="btn btn-dark btn-checkout" onclick="alert('Proceeding to checkout simulation.');" id="cart-checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- JavaScript Link -->
+    <script src="js/app.js"></script>
+</body>
+</html>

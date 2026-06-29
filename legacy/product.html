@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | ARZ Made to feel effortless</title>
+    <meta name="description" content="View product details, materials, sizing, and details for ARZ Made to feel effortless premium clothing garments.">
+    
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <!-- --- HEADER --- -->
+    <header id="main-header">
+        <div class="container header-inner">
+            <button class="mobile-toggle" aria-label="Toggle mobile menu" id="mobile-toggle-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <a href="index.html" class="logo" id="header-logo">ARZ<span>Made to feel effortless</span></a>
+
+            <nav class="nav-links" id="navigation-bar">
+                <a href="shop.html" id="nav-shop">Shop</a>
+                <a href="about.html" id="nav-about">Philosophy</a>
+                <a href="about.html#atelier" id="nav-story">The Atelier</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="header-btn cart-btn" aria-label="Open bag" id="cart-drawer-toggle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- --- MAIN PRODUCT DETAILS LAYOUT --- -->
+    <main class="container section" style="margin-top: var(--header-height);" id="product-detail-container">
+        <!-- Back navigation link -->
+        <a href="shop.html" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; display: inline-flex; align-items: center; gap: 8px; margin-bottom: var(--spacing-md); color: var(--color-text-muted);" id="back-to-shop-link">
+            &larr; Back to all collection
+        </a>
+
+        <div class="product-detail-layout">
+            <!-- Left: Gallery -->
+            <div class="product-gallery" id="product-media-gallery">
+                <div class="product-main-image">
+                    <!-- Default fallback trench image (overwritten dynamically by JS) -->
+                    <img id="main-product-img" src="images/product_trench.png" alt="Featured product main view">
+                </div>
+                <div class="product-gallery-nav">
+                    <img id="thumb-primary" src="images/product_trench.png" data-image="images/product_trench.png" class="gallery-thumbnail active" alt="Thumbnail 1">
+                    <img id="thumb-secondary" src="images/product_trench_alt.png" data-image="images/product_trench_alt.png" class="gallery-thumbnail" alt="Thumbnail 2">
+                </div>
+            </div>
+
+            <!-- Right: Details panel -->
+            <div class="product-info-panel" id="product-details-panel">
+                <div class="product-info-header">
+                    <h1>The Silk-Linen Trench</h1>
+                    <div class="price">₹39,600</div>
+                </div>
+
+                <!-- Sizing Selector -->
+                <div class="product-size-section">
+                    <div class="size-title-wrapper">
+                        <span>Select Size</span>
+                        <span class="size-guide-link" onclick="alert('Size guide: Standard fit. Model is 5\'10 wearing size M.');" id="size-guide-modal-btn">Size Guide</span>
+                    </div>
+                    <div class="size-selector" id="product-size-selector">
+                        <button class="size-btn" data-size="xs" id="size-xs">XS</button>
+                        <button class="size-btn" data-size="s" id="size-s">S</button>
+                        <button class="size-btn active" data-size="m" id="size-m">M</button>
+                        <button class="size-btn" data-size="l" id="size-l">L</button>
+                    </div>
+                </div>
+
+                <!-- Add to Bag Buttons -->
+                <div class="product-add-to-cart-wrapper">
+                    <button class="btn btn-dark btn-add-to-cart" data-product-id="silk_linen_trench" id="add-to-cart-action-btn">Add to Bag</button>
+                </div>
+
+                <!-- Detail Accordions -->
+                <div class="accordion" id="details-accordion-group">
+                    <div class="accordion-item active">
+                        <h4 class="accordion-title">Materials & Care</h4>
+                        <div class="accordion-content">
+                            <p>Crafted from an exquisite blend of 60% organic mulberry silk and 40% sustainable long-staple linen. This fabric offers a luxury weight, fluid drape, and soft texture. Dry clean only. Iron on low heat if necessary.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h4 class="accordion-title">Sizing & Fit</h4>
+                        <div class="accordion-content">
+                            <p>Designed for a relaxed, slightly oversized double-breasted silhouette. Fits true to size. If you prefer a more tailored look, we recommend ordering one size down. Model is 178 cm / 5'10" and wears a size Medium.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h4 class="accordion-title">Shipping & Returns</h4>
+                        <div class="accordion-content">
+                            <p>Complimentary carbon-neutral standard delivery on orders above ₹15,000. Returns are accepted within 30 days of shipment receipt, provided the garment is unworn, in original packaging, with all designer tags attached.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- --- FOOTER --- -->
+    <footer id="main-footer">
+        <div class="container footer-inner">
+            <div class="footer-col footer-about">
+                <h4 id="footer-brand-title">ARZ Made to feel effortless</h4>
+                <p>Minimalist slow-fashion and premium curated staples designed with organic fibers in earth-inspired beige and off-white tones.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="shop.html?cat=knitwear">Knitwear</a></li>
+                    <li><a href="shop.html?cat=linen">Organic Linen</a></li>
+                    <li><a href="shop.html?cat=outerwear">Outerwear</a></li>
+                    <li><a href="shop.html">New Arrivals</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Customer Care</h4>
+                <ul>
+                    <li><a href="about.html">Our Atelier</a></li>
+                    <li><a href="shop.html">Sizing Guide</a></li>
+                    <li><a href="index.html">Shipping & Returns</a></li>
+                    <li><a href="index.html">Sustainability</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:atelier@arz.com">atelier@arz.com</a></li>
+                    <li><a href="tel:+18005550190">1.800.555.0190</a></li>
+                    <li><a href="about.html">Our Showroom</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <span class="footer-copyright">&copy; 2026 ARZ Made to feel effortless. All rights reserved.</span>
+            <div class="footer-socials">
+                <a href="#instagram">Instagram</a>
+                <a href="#pinterest">Pinterest</a>
+                <a href="#journal">Journal</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- --- SLIDE-OUT CART DRAWER --- -->
+    <div class="cart-overlay" id="cart-drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer-menu">
+        <div class="cart-header">
+            <h3>Shopping Bag</h3>
+            <button class="close-cart" aria-label="Close cart" id="cart-close-btn">&times;</button>
+        </div>
+        
+        <!-- Cart items populated by JS -->
+        <div class="cart-items" id="cart-items-list">
+            <!-- Empty state fallback handled in JS -->
+        </div>
+
+        <div class="cart-footer" id="cart-drawer-footer">
+            <div class="cart-subtotal">
+                <span>Subtotal</span>
+                <span id="cart-subtotal-val">₹0.00</span>
+            </div>
+            <p class="cart-footer-text">Taxes and shipping calculated at checkout. Worldwide shipping available.</p>
+            <button class="btn btn-dark btn-checkout" onclick="alert('Proceeding to checkout simulation.');" id="cart-checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- JavaScript Link -->
+    <script src="js/app.js"></script>
+</body>
+</html>

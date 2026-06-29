@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAF8F5;
+  --foreground: #2D2D2D;
+  --color-warm-beige: #E8DCCB;
+  --color-ivory-white: #FAF8F5;
+  --color-soft-cream: #F6F0E8;
+  --color-gold: #C9A96E;           /* slightly softer gold for restraint */
+  --color-charcoal: #2D2D2D;
+  --color-muted: #8A8070;          /* new muted warm gray for secondary text */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-beige: var(--color-warm-beige);
+  --color-brand-white: var(--color-ivory-white);
+  --color-brand-cream: var(--color-soft-cream);
+  --color-brand-gold: var(--color-gold);
+  --color-brand-charcoal: var(--color-charcoal);
+  --color-brand-muted: var(--color-muted);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+/* Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-ivory-white);
+  color: var(--color-charcoal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--color-ivory-white);
+  color: var(--color-charcoal);
+  overflow-x: hidden;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* Selection styling */
+::selection {
+  background: var(--color-gold);
+  color: var(--color-ivory-white);
+}
+
+/* Scrollbar — ultra minimal */
+::-webkit-scrollbar { width: 3px; height: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-warm-beige); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-gold); }
+
+/* Typography */
+.font-editorial {
+  font-family: var(--font-serif), "Cormorant Garamond", Georgia, serif;
+  font-feature-settings: "liga" 1, "kern" 1;
+}
+
+.font-body {
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+}
+
+/* Container */
+.editorial-container {
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .editorial-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+/* Quiet gold accent hover */
+.gold-hover {
+  transition: color 0.5s ease;
+}
+.gold-hover:hover {
+  color: var(--color-gold);
+}
+
+/* Effortless image hover */
+.zoom-trigger { overflow: hidden; }
+.zoom-target {
+  transition: transform 1.1s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+.zoom-trigger:hover .zoom-target {
+  transform: scale(1.04);
+}
+
+/* Fine hairline border */
+.hairline {
+  border-color: rgba(45, 45, 45, 0.06);
+}
+
+/* Subtle fade-in for page transitions */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Loading bar shine */
+@keyframes shine {
+  from { left: -50%; }
+  to   { left: 110%; }
+}
