@@ -47,9 +47,9 @@ export const Footer: React.FC = () => {
               Contact
             </h4>
             <ul className="space-y-3 text-[0.7rem] font-light text-brand-charcoal/60">
-              <li><a href="mailto:atelier@arz.com" className="hover:text-brand-gold transition-colors duration-400">atelier@arz.com</a></li>
-              <li><a href="tel:+18005550190" className="hover:text-brand-gold transition-colors duration-400">1.800.555.0190</a></li>
-              <li className="text-brand-charcoal/40 text-[0.65rem]">Fifth Avenue, New York</li>
+              <li><a href="mailto:arzbyaarshiya@gmail.com" className="hover:text-brand-gold transition-colors duration-400">arzbyaarshiya@gmail.com</a></li>
+              <li><a href="tel:+918708170528" className="hover:text-brand-gold transition-colors duration-400">+91 8708170528</a></li>
+              <li><a href="https://www.instagram.com/arzbyaarshiya/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors duration-400">Instagram @arzbyaarshiya</a></li>
             </ul>
           </div>
 

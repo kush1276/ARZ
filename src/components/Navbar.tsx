@@ -213,8 +213,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onCartToggle, onWishlistToggle }
 
               <div className="mt-auto border-t border-brand-charcoal/10 pt-6">
                 <p className="text-[0.65rem] tracking-[0.15em] text-brand-charcoal/50 uppercase mb-4">Maison ARZ</p>
-                <a href="mailto:atelier@arz.com" className="text-xs tracking-wider text-brand-charcoal hover:text-brand-gold block mb-1">
-                  atelier@arz.com
+                <a href="mailto:arzbyaarshiya@gmail.com" className="text-xs tracking-wider text-brand-charcoal hover:text-brand-gold block mb-1">
+                  arzbyaarshiya@gmail.com
                 </a>
                 <p className="text-xs text-brand-charcoal/60 tracking-wider">
                   &ldquo;Where Elegance Becomes Identity.&rdquo;
