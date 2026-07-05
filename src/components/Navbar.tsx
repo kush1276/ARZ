@@ -39,92 +39,85 @@ export const Navbar: React.FC<NavbarProps> = ({ onCartToggle, onWishlistToggle }
     setSearchOpen(false);
   }, [pathname]);
 
-  const searchResults = searchQuery.trim() === '' 
-    ? [] 
-    : Object.values(PRODUCTS).filter(product => 
-        product.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-        product.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        product.description.toLowerCase().includes(searchQuery.toLowerCase())
-      );
+  const searchResults = searchQuery.trim() === ''
+    ? []
+    : Object.values(PRODUCTS).filter(product =>
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.description.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
   return (
     <>
-      <header 
-        className={`fixed top-0 left-0 w-full z-40 transition-all duration-700 ease-out border-b ${
-          scrolled 
-            ? 'bg-brand-white/80 backdrop-blur-lg py-4 border-brand-charcoal/[0.04]' 
+      <header
+        className={`fixed top-0 left-0 w-full z-40 transition-all duration-700 ease-out border-b ${scrolled
+            ? 'bg-brand-white/80 backdrop-blur-lg py-4 border-brand-charcoal/[0.04]'
             : 'bg-transparent py-7 border-transparent'
-        }`}
+          }`}
       >
         <div className="editorial-container flex items-center justify-between">
-          
-          {/* Mobile menu toggle */}
-          <button 
+
+          {/* Mobile menu toggle — shows below lg (1024px) */}
+          <button
             onClick={() => setMobileMenuOpen(true)}
-            className="md:hidden text-brand-charcoal hover:text-brand-gold transition-colors duration-300"
+            className="lg:hidden text-brand-charcoal hover:text-brand-gold transition-colors duration-300"
             aria-label="Open menu"
           >
-            <Menu className="w-5 height-5" />
+            <Menu className="w-5 h-5" />
           </button>
 
-          {/* Nav Links - Left side on Desktop */}
-          <nav className="hidden md:flex items-center space-x-12 text-[0.7rem] uppercase tracking-[0.25em] font-light">
-            <Link 
-              href="/shop" 
+          {/* Nav Links - Left side on Desktop (lg+) */}
+          <nav className="hidden lg:flex items-center space-x-8 xl:space-x-12 text-[0.65rem] xl:text-[0.7rem] uppercase tracking-[0.18em] xl:tracking-[0.25em] font-light">
+            <Link
+              href="/shop"
               className={`gold-hover transition-colors duration-300 ${pathname === '/shop' ? 'text-brand-gold' : 'text-brand-charcoal'}`}
             >
               Shop
             </Link>
-            <Link 
-              href="/about" 
+            <Link
+              href="/about"
               className={`gold-hover transition-colors duration-300 ${pathname === '/about' ? 'text-brand-gold' : 'text-brand-charcoal'}`}
             >
               About
             </Link>
-            <Link 
-              href="/#philosophy" 
-              className="gold-hover text-brand-charcoal transition-colors duration-300"
-            >
-              Philosophy
-            </Link>
-            <Link 
-              href="/#lookbook" 
-              className="gold-hover text-brand-charcoal transition-colors duration-300"
+            <Link
+              href="/lookbook"
+              className={`gold-hover transition-colors duration-300 ${pathname === '/lookbook' ? 'text-brand-gold' : 'text-brand-charcoal'}`}
             >
               Lookbook
             </Link>
           </nav>
 
-          {/* Logo - Centered on Desktop, right/centered on mobile */}
-          <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
-            <Link href="/" className="group flex flex-col items-center">
-              <span className="font-editorial text-2xl md:text-3xl font-light tracking-[0.25em] text-brand-charcoal group-hover:text-brand-gold transition-colors duration-500">
+          {/* Logo - Always centered absolutely */}
+          <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none">
+            <Link href="/" className="group flex flex-col items-center pointer-events-auto">
+              <span className="font-editorial text-xl md:text-2xl lg:text-3xl font-light tracking-[0.25em] text-brand-charcoal group-hover:text-brand-gold transition-colors duration-500">
                 ARZ
               </span>
-              <span className="text-[0.55rem] tracking-[0.4em] uppercase text-brand-charcoal/60 font-light mt-[-2px]">
+              <span className="hidden sm:block text-[0.5rem] lg:text-[0.55rem] tracking-[0.3em] lg:tracking-[0.4em] uppercase text-brand-charcoal/60 font-light mt-[-2px]">
                 Made to feel effortless
               </span>
             </Link>
           </div>
 
           {/* Actions - Right side */}
-          <div className="flex items-center space-x-5 md:space-x-7">
+          <div className="flex items-center space-x-4 md:space-x-5 lg:space-x-7">
             {/* Search Toggle */}
-            <button 
+            <button
               onClick={() => setSearchOpen(true)}
               className="text-brand-charcoal hover:text-brand-gold transition-colors duration-300"
               aria-label="Search Catalog"
             >
-              <Search className="w-4 h-4 md:w-5 md:h-5" />
+              <Search className="w-4 h-4 lg:w-5 lg:h-5" />
             </button>
 
             {/* Wishlist Toggle */}
-            <button 
+            <button
               onClick={onWishlistToggle}
               className="relative text-brand-charcoal hover:text-brand-gold transition-colors duration-300"
               aria-label="Open Wishlist"
             >
-              <Heart className="w-4 h-4 md:w-5 md:h-5" />
+              <Heart className="w-4 h-4 lg:w-5 lg:h-5" />
               {wishlist.length > 0 && (
                 <span className="absolute -top-1.5 -right-1.5 bg-brand-gold text-brand-white text-[0.6rem] font-medium w-4 h-4 rounded-full flex items-center justify-center scale-95 shadow-sm">
                   {wishlist.length}
@@ -133,12 +126,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onCartToggle, onWishlistToggle }
             </button>
 
             {/* Cart Toggle */}
-            <button 
+            <button
               onClick={onCartToggle}
               className="relative text-brand-charcoal hover:text-brand-gold transition-colors duration-300 flex items-center"
               aria-label="Open Shopping Bag"
             >
-              <ShoppingBag className="w-4 h-4 md:w-5 md:h-5" />
+              <ShoppingBag className="w-4 h-4 lg:w-5 lg:h-5" />
               {cartCount > 0 && (
                 <span className="absolute -top-1.5 -right-1.5 bg-brand-charcoal text-brand-white text-[0.6rem] font-medium w-4 h-4 rounded-full flex items-center justify-center scale-95 shadow-sm">
                   {cartCount}
@@ -155,7 +148,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onCartToggle, onWishlistToggle }
         {mobileMenuOpen && (
           <>
             {/* Backdrop */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -163,7 +156,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onCartToggle, onWishlistToggle }
               className="fixed inset-0 bg-brand-charcoal/30 backdrop-blur-sm z-50 md:hidden"
             />
             {/* Drawer */}
-            <motion.div 
+            <motion.div
               initial={{ x: '-100%' }}
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
@@ -179,7 +172,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onCartToggle, onWishlistToggle }
                     Made to feel effortless
                   </span>
                 </div>
-                <button 
+                <button
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-brand-charcoal hover:text-brand-gold transition-colors duration-300"
                   aria-label="Close menu"
@@ -199,10 +192,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onCartToggle, onWishlistToggle }
                 </Link>
                 <Link href="/#founder" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-brand-charcoal/5 flex justify-between items-center">
                   <span>The Designer</span>
-                  <ArrowRight className="w-4 h-4 text-brand-charcoal/30" />
-                </Link>
-                <Link href="/#philosophy" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-brand-charcoal/5 flex justify-between items-center">
-                  <span>Our Philosophy</span>
                   <ArrowRight className="w-4 h-4 text-brand-charcoal/30" />
                 </Link>
                 <Link href="/#lookbook" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-brand-charcoal/5 flex justify-between items-center">
@@ -228,17 +217,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onCartToggle, onWishlistToggle }
       {/* --- LUXURY SEARCH OVERLAY --- */}
       <AnimatePresence>
         {searchOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-brand-white z-50 flex flex-col p-6 md:p-12 overflow-y-auto"
           >
             <div className="editorial-container w-full max-w-4xl flex-grow flex flex-col justify-start mt-8 md:mt-16">
-              
+
               {/* Close Button */}
               <div className="flex justify-end mb-8">
-                <button 
+                <button
                   onClick={() => {
                     setSearchOpen(false);
                     setSearchQuery('');
@@ -258,8 +247,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onCartToggle, onWishlistToggle }
 
               {/* Input field */}
               <div className="relative border-b border-brand-charcoal/20 pb-4 mb-10 w-full">
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   placeholder="What are you looking for?"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
@@ -318,7 +307,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onCartToggle, onWishlistToggle }
                     {searchResults.length > 0 ? (
                       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                         {searchResults.map((product) => (
-                          <Link 
+                          <Link
                             key={product.id}
                             href={`/product/${product.id}`}
                             onClick={() => {
@@ -328,8 +317,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onCartToggle, onWishlistToggle }
                             className="group flex gap-4 items-center p-3 border border-brand-charcoal/5 hover:border-brand-gold transition-all duration-300 bg-brand-cream/10"
                           >
                             <div className="w-16 h-20 bg-brand-cream relative overflow-hidden flex-shrink-0">
-                              <img 
-                                src={product.image} 
+                              <img
+                                src={product.image}
                                 alt={product.name}
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                               />

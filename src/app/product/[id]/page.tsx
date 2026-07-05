@@ -27,7 +27,7 @@ export default function ProductPage({ params }: ProductPageProps) {
   const [addedToast, setAddedToast] = useState(false);
   
   // Accordion active state
-  const [activeAccordion, setActiveAccordion] = useState<string | null>('materials');
+  const [activeAccordion, setActiveAccordion] = useState<string | null>(null);
 
   // Track product view and set default image on load
   useEffect(() => {
@@ -211,32 +211,6 @@ export default function ProductPage({ params }: ProductPageProps) {
               {/* Accordions details */}
               <div className="border-t border-brand-charcoal/10 pt-6 space-y-4">
                 
-                {/* Accordion Item: Materials & Care */}
-                <div className="border-b border-brand-charcoal/5 pb-4">
-                  <button
-                    onClick={() => setActiveAccordion(activeAccordion === 'materials' ? null : 'materials')}
-                    className="w-full flex justify-between items-center text-left py-2 font-editorial text-sm tracking-wide text-brand-charcoal"
-                  >
-                    <span>Materials & Care</span>
-                    <ChevronDown className={`w-4 h-4 text-brand-charcoal/40 transition-transform duration-300 ${
-                      activeAccordion === 'materials' ? 'rotate-180' : ''
-                    }`} />
-                  </button>
-                  <AnimatePresence>
-                    {activeAccordion === 'materials' && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden text-xs text-brand-charcoal/75 leading-relaxed space-y-2 pt-2 font-light"
-                      >
-                        <p><strong className="font-medium">Fabric:</strong> {product.materials}</p>
-                        <p><strong className="font-medium">Care:</strong> {product.care}</p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-
                 {/* Accordion Item: Sizing & Fit */}
                 <div className="border-b border-brand-charcoal/5 pb-4">
                   <button
@@ -257,31 +231,6 @@ export default function ProductPage({ params }: ProductPageProps) {
                         className="overflow-hidden text-xs text-brand-charcoal/75 leading-relaxed pt-2 font-light"
                       >
                         <p>{product.fit}</p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-
-                {/* Accordion Item: Shipping & Returns */}
-                <div className="border-b border-brand-charcoal/5 pb-4">
-                  <button
-                    onClick={() => setActiveAccordion(activeAccordion === 'shipping' ? null : 'shipping')}
-                    className="w-full flex justify-between items-center text-left py-2 font-editorial text-sm tracking-wide text-brand-charcoal"
-                  >
-                    <span>Shipping & Returns</span>
-                    <ChevronDown className={`w-4 h-4 text-brand-charcoal/40 transition-transform duration-300 ${
-                      activeAccordion === 'shipping' ? 'rotate-180' : ''
-                    }`} />
-                  </button>
-                  <AnimatePresence>
-                    {activeAccordion === 'shipping' && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden text-xs text-brand-charcoal/75 leading-relaxed pt-2 font-light"
-                      >
-                        <p>Complimentary carbon-neutral standard delivery on orders above ₹15,000. Returns are accepted within 30 days of shipment receipt, provided the garment is unworn, in original packaging, with all designer tags attached.</p>
                       </motion.div>
                     )}
                   </AnimatePresence>

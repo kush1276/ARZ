@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Heart, ShoppingBag, Eye, ChevronLeft, ChevronRight, Check } from 'lucide-react';
+import { ArrowRight, Heart, ShoppingBag, Eye, Check } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { PRODUCTS } from '@/data/products';
 import { AtelierLayout } from '@/components/AtelierLayout';
@@ -13,8 +13,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   const [lookbookModalImage, setLookbookModalImage] = useState<string | null>(null);
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
-  
+
   // Newsletter Form State
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
@@ -52,28 +51,6 @@ export default function Home() {
     { src: '/images/palm_set_1.jpg', span: 'col-span-2 row-span-2', caption: 'Palm Set | Lilac Palm Motif' },
     { src: '/images/palm_set_2.jpg', span: 'col-span-1 row-span-1', caption: 'Palm Set | Trousers Details' },
     { src: '/images/palm_set_3.jpg', span: 'col-span-1 row-span-1', caption: 'Palm Set | Sleeve & Print Detail' },
-  ];
-
-  // Testimonials
-  const testimonials = [
-    {
-      name: 'Victoria Vance',
-      rating: 5,
-      review: 'ARZ represents everything I want in my wardrobe. The materials are extremely high-quality and the cuts are timeless. I wore the Silk-Linen Trench in Milan and received endless compliments.',
-      role: 'Creative Director, London'
-    },
-    {
-      name: 'Eleanora Sterling',
-      rating: 5,
-      review: 'The linen trousers fit like a dream. Finding premium clothing that respects craftsmanship and sustainability is rare. Aarshiya Grover has created something truly exceptional.',
-      role: 'Art Advisor, New York'
-    },
-    {
-      name: 'Charlotte Dubois',
-      rating: 5,
-      review: 'I am in love with the sand knit sweater. It feels like cloud-soft cashmere and sits perfectly. ARZ Made to feel effortless is my new go-to for luxury staples.',
-      role: 'Fashion Consultant, Paris'
-    }
   ];
 
   // Auto transition hero slide (or simple manual)
@@ -180,33 +157,33 @@ export default function Home() {
               Timeless fashion crafted for those who value elegance above all.
             </motion.p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2, duration: 0.9 }}
-                className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center"
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.9 }}
+              className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center"
+            >
+              <Link
+                href="/shop"
+                className="border border-brand-white/50 text-brand-white hover:bg-brand-white hover:text-brand-charcoal text-[0.65rem] uppercase tracking-[0.3em] font-light px-10 py-4 transition-all duration-700 min-w-[180px]"
               >
-                <Link
-                  href="/shop"
-                  className="border border-brand-white/50 text-brand-white hover:bg-brand-white hover:text-brand-charcoal text-[0.65rem] uppercase tracking-[0.3em] font-light px-10 py-4 transition-all duration-700 min-w-[180px]"
-                >
-                  Shop Collection
-                </Link>
-                <Link
-                  href="#founder"
-                  className="text-brand-white/70 hover:text-brand-white text-[0.65rem] uppercase tracking-[0.3em] font-light px-10 py-4 border border-transparent hover:border-brand-white/20 transition-all duration-700 min-w-[180px]"
-                >
-                  Discover ARZ
-                </Link>
-              </motion.div>
+                Shop Collection
+              </Link>
+              <Link
+                href="#founder"
+                className="text-brand-white/70 hover:text-brand-white text-[0.65rem] uppercase tracking-[0.3em] font-light px-10 py-4 border border-transparent hover:border-brand-white/20 transition-all duration-700 min-w-[180px]"
+              >
+                Discover ARZ
+              </Link>
+            </motion.div>
           </div>
 
           {/* Scroll Indicator */}
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-70">
             <span className="text-[0.55rem] uppercase tracking-[0.3em] text-brand-white mb-2 font-light">Scroll Down</span>
             <div className="w-[1px] h-12 bg-brand-white/25 relative overflow-hidden">
-              <motion.div 
-                animate={{ y: ['0%', '100%'] }} 
+              <motion.div
+                animate={{ y: ['0%', '100%'] }}
                 transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
                 className="absolute top-0 left-0 w-full h-4 bg-brand-white"
               />
@@ -218,7 +195,7 @@ export default function Home() {
         <section id="founder" className="bg-brand-beige/30 py-24 md:py-32 border-b border-brand-charcoal/5">
           <div className="editorial-container">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-              
+
               {/* Left Column: portrait (5 cols) */}
               <div className="lg:col-span-5 relative">
                 <div className="aspect-[3/4] relative overflow-hidden border border-brand-charcoal/10 bg-brand-cream/50">
@@ -316,7 +293,7 @@ export default function Home() {
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal/60 via-brand-charcoal/10 to-transparent opacity-80" />
-                  
+
                   <div className="relative z-10 text-brand-white space-y-1 transform translate-y-3 group-hover:translate-y-0 transition-transform duration-500">
                     <span className="text-[0.6rem] uppercase tracking-[0.2em] text-brand-gold/90 font-medium block">
                       {item.subtitle}
@@ -335,66 +312,10 @@ export default function Home() {
           </div>
         </section>
 
-
-
-        {/* --- BRAND PHILOSOPHY --- */}
-        <section id="philosophy" className="py-24 md:py-32">
-          <div className="editorial-container">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-              
-              {/* Left Column: Information (5 cols) */}
-              <div className="lg:col-span-5 space-y-6">
-                <span className="text-brand-gold text-xs uppercase tracking-[0.3em] font-medium block">
-                  Crafted Beyond Trends
-                </span>
-                <h2 className="font-editorial text-4xl md:text-5xl font-light tracking-wide text-brand-charcoal leading-tight">
-                  A Canvas of Linen,<br />Cashmere, & Light
-                </h2>
-                <p className="text-xs md:text-sm text-brand-charcoal/70 leading-relaxed font-light">
-                  ARZ believes true luxury is timeless. Every piece is designed with careful attention to detail, premium materials, and exceptional craftsmanship. The focus is on creating garments that remain relevant and elegant for years rather than seasons.
-                </p>
-                <div className="pt-4">
-                  <Link
-                    href="/shop"
-                    className="bg-brand-charcoal hover:bg-brand-gold text-brand-white text-xs uppercase tracking-[0.2em] font-medium px-8 py-4 transition-colors duration-500 shadow-md inline-block"
-                  >
-                    Explore Materials
-                  </Link>
-                </div>
-              </div>
-
-              {/* Right Column: Key Pillars (7 cols) */}
-              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {[
-                  { title: 'Premium Fabrics', desc: 'Sourcing the finest organic mulberry silks, sustainable flax linens, and Mongolian cashmere for ultimate comfort.' },
-                  { title: 'Exceptional Craftsmanship', desc: 'Working with skilled artisans who hand-finish collars, linings, and seams to ensure unmatched structural integrity.' },
-                  { title: 'Timeless Design', desc: 'Crafting minimalistic silhouettes and relaxed fits that transcend fast-moving micro trends.' },
-                  { title: 'Sustainable Practices', desc: 'Low-impact processing, water conservation guidelines, and biodegradable natural fibers in neutral hues.' },
-                  { title: 'Modern Luxury', desc: 'Clean silhouettes, luxury styling accents, and functional details tailored for confident lifestyles.' },
-                ].map((pillar, idx) => (
-                  <div 
-                    key={idx} 
-                    className={`p-6 border border-brand-charcoal/5 bg-brand-cream/10 space-y-2.5 ${idx === 4 ? 'sm:col-span-2' : ''}`}
-                  >
-                    <span className="text-[0.65rem] tracking-wider text-brand-gold uppercase font-semibold">0{idx + 1}</span>
-                    <h3 className="font-editorial text-base text-brand-charcoal font-medium">
-                      {pillar.title}
-                    </h3>
-                    <p className="text-xs text-brand-charcoal/60 leading-relaxed font-light">
-                      {pillar.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-            </div>
-          </div>
-        </section>
-
         {/* --- LUXURY LOOKBOOK SECTION --- */}
         <section id="lookbook" className="py-24 md:py-32 bg-brand-beige/20 border-t border-brand-charcoal/5">
           <div className="editorial-container">
-            
+
             <div className="text-center space-y-3 mb-16">
               <span className="text-brand-gold text-xs uppercase tracking-[0.3em] font-medium">Maison Editorial</span>
               <h2 className="font-editorial text-3xl md:text-4xl font-light tracking-wider text-brand-charcoal">
@@ -419,7 +340,7 @@ export default function Home() {
                     className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-brand-charcoal/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6" />
-                  
+
                   {/* Subtle caption bottom */}
                   <div className="absolute bottom-4 left-4 text-brand-white z-10 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
                     <p className="text-xs uppercase tracking-[0.25em] font-medium font-editorial">{image.caption}</p>
@@ -465,67 +386,6 @@ export default function Home() {
             </motion.div>
           )}
         </AnimatePresence>
-
-        {/* --- TESTIMONIALS --- */}
-        <section className="py-24 md:py-32 border-t border-brand-charcoal/5">
-          <div className="editorial-container max-w-4xl">
-            
-            <div className="text-center space-y-3 mb-12">
-              <span className="text-brand-gold text-xs uppercase tracking-[0.3em] font-medium">Maison Review</span>
-              <h2 className="font-editorial text-3xl font-light tracking-wider text-brand-charcoal">
-                The Atelier Circle
-              </h2>
-            </div>
-
-            {/* Testimonials Slide Frame */}
-            <div className="relative border border-brand-gold/20 bg-brand-white p-8 md:p-12 text-center space-y-6 shadow-sm">
-              
-              {/* Stars */}
-              <div className="flex justify-center space-x-1">
-                {[...Array(testimonials[activeTestimonial].rating)].map((_, i) => (
-                  <span key={i} className="text-brand-gold text-base">★</span>
-                ))}
-              </div>
-
-              {/* Review Text */}
-              <blockquote className="font-editorial text-lg md:text-xl italic text-brand-charcoal/90 leading-relaxed font-light max-w-2xl mx-auto">
-                &ldquo;{testimonials[activeTestimonial].review}&rdquo;
-              </blockquote>
-
-              {/* Customer Info */}
-              <div>
-                <cite className="not-italic text-sm font-medium tracking-widest uppercase text-brand-charcoal">
-                  {testimonials[activeTestimonial].name}
-                </cite>
-                <p className="text-[0.65rem] tracking-wider text-brand-charcoal/40 uppercase mt-0.5">
-                  {testimonials[activeTestimonial].role}
-                </p>
-              </div>
-
-              {/* Slide controls */}
-              <div className="flex justify-center items-center space-x-4 pt-6">
-                <button
-                  onClick={() => setActiveTestimonial(prev => (prev === 0 ? testimonials.length - 1 : prev - 1))}
-                  className="w-8 h-8 rounded-full border border-brand-charcoal/10 hover:border-brand-gold flex items-center justify-center text-brand-charcoal/60 hover:text-brand-gold transition-colors duration-300"
-                  aria-label="Previous testimonial"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-                <span className="text-[0.7rem] uppercase tracking-widest text-brand-charcoal/30">
-                  {activeTestimonial + 1} / {testimonials.length}
-                </span>
-                <button
-                  onClick={() => setActiveTestimonial(prev => (prev === testimonials.length - 1 ? 0 : prev + 1))}
-                  className="w-8 h-8 rounded-full border border-brand-charcoal/10 hover:border-brand-gold flex items-center justify-center text-brand-charcoal/60 hover:text-brand-gold transition-colors duration-300"
-                  aria-label="Next testimonial"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-
-          </div>
-        </section>
 
         {/* --- NEWSLETTER SECTION --- */}
         <section className="py-20 md:py-28 bg-brand-beige/40 border-t border-brand-charcoal/[0.06]">
